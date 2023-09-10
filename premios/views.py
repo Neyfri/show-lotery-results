@@ -12,10 +12,7 @@ def register(request):
         contenxt = {'form' : UserCreationForm }
         return render(request, 'register.html', contenxt)
     else:
-        if request.POST['password1'] or request.POST['password2'] is "":
-            contenxt = {'form' : UserCreationForm, 'error': 'Debe llenar todo los espacios'}
-            return render(request, 'register.html', contenxt)
-        if request.POST['password1'] == request.POST['password2']:
+        if request.POST['password1'] == request.POST['password2'] and request.POST['password1'] != "" and request.POST['password2'] != "" and request.POST['username'] != "":
             #registrar nuevo usuario
             try:
                 user = User.objects.create_user(username=request.POST['username'],password=request.POST['password1'])
