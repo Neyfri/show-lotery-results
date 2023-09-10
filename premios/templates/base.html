@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Show Lotery Results</title>
+    <link rel="shortcut icon" href="https://www.svgrepo.com/show/296781/ball.svg" type="image/x-icon">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css">
+</head>
+<body>
+    <header>
+        <nav class="navbar navbar-expand-lg bg-primary">
+            <a href="{% url 'indexpage' %}"><img src="https://www.svgrepo.com/show/296832/ball.svg" alt="Algo" style="height: 1cm;"></a>
+            <div class="container-fluid">
+                <ul class="navbar-nav ms-auto">
+                    <li class="navbar-nav item"><a href="{% url 'indexpage' %}" class="nav-link active text-light">Pagina Index</a></li>
+                    {% if user.is_authenticated %}
+                    <li class="navbar-nav item"><a href="{% url 'signout' %}" class="nav-link text-light">Logout</a></li>
+                    <li class="navbar-nav item"><a href="{% url 'mainpage' %}" class="nav-link text-light">Pagina Principal</a></li>
+                    {% else %}
+                    <li class="navbar-nav item"><a href="{% url 'register' %}" class="nav-link text-light">Registrar</a></li>
+                    <li class="navbar-nav item"><a href="{% url 'signin' %}" class="nav-link text-light">Login</a></li>
+                    {% endif %}
+                </ul>
+            </div>
+        </nav>
+    </header>
+    {% block content %}
+    {% endblock %}
+</body>
+</html>

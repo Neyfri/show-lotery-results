@@ -1,0 +1,39 @@
+{% extends 'base.html' %}
+{% block content %}
+<main class="container py-5">
+<section class="card card-body">
+    <h2 class="display-1 text-center">Resultados de la Tarde</h2>
+    <div class="row">
+        <div class="col-md-4 offset-md-4">
+            <ul style="font-size: xx-large; font-family: Arial, Helvetica, sans-serif;">
+                <label for="">La Primera</label>
+                <li>{{r1}}</li>
+                <label for="">Quiniela Leidsa</label>
+                <li>{{r2}}</li>
+                <label for="">Quiniela Real</label>
+                <li>{{r3}}</li>
+                <label for="">Quiniela Loteka</label>
+                <li>{{r4}}</li>
+            </ul>
+        </div>
+    </div>
+</section>
+<section class="card card-body mt-5">
+    <h2 class="display-1 text-center">Resultados de la Noche</h2>
+    <div class="row">
+        <div class="col-md-4 offset-md-4">
+            <ul style="font-size: xx-large; font-family: Arial, Helvetica, sans-serif;">
+                <label for="">Loteria Nacional</label>
+                <li>{{r1}}</li>
+                <label for="">Quiniela Leidsa</label>
+                <li>{{r2}}</li>
+                <label for="">Quiniela Real</label>
+                <li>{{r3}}</li>
+                <label for="">Quiniela Loteka</label>
+                <li>{{r4}}</li>
+            </ul>
+        </div>
+    </div>
+</section>
+</main>
+{% endblock %}
